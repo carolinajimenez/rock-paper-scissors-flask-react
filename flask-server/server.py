@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """
 Rock-Paper-Scissors Game
+
+References:
+- https://www.youtube.com/watch?v=7LNl2JlZKHA
+- https://www.youtube.com/watch?v=PppslXOR7TA
 """
 
 __author__ = "Carolina Jiménez Moreno <cjimenezm0794@gmail.com>"

@@ -1,3 +1,10 @@
+/*
+Rock-Paper-Scissors Game
+
+References:
+- https://www.youtube.com/watch?v=7LNl2JlZKHA
+- https://www.youtube.com/watch?v=PppslXOR7TA
+*/ 
 import React, { useState, useEffect } from 'react';
 
 export default function App() {
