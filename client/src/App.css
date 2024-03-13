@@ -44,13 +44,26 @@
  background-color: var(--blue);;
 }
 
-.start-user-icon, .start-pc-icon {
-  width: 100px;
-  height: 100px;
-  margin-top: 20px;
+.action {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
 }
 
-.start-pc-icon {
+.start-user-icon, .start-pc-icon,
+.rock-user-icon, .rock-pc-icon,
+.paper-user-icon, .paper-pc-icon,
+.scissors-user-icon, .scissors-pc-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.start-pc-icon,
+.rock-pc-icon,
+.paper-pc-icon,
+.scissors-pc-icon {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
