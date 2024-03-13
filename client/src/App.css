@@ -1,38 +1,83 @@
+:root {
+  --primary: #282c34;
+  --text-over-dark-background: white;
+  --text-over-light-background: black;
+  --blue: #1ea4c9;
+  --blue-light: #89def6;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.App-container {
+  background-color: var(--primary);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--text-over-dark-background);
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  vertical-align: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.player {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: var(--text-over-dark-background);
+}
+
+.score {
+ padding: 5px 3px;
+ font-weight: bold;
+ background-color: var(--blue);;
+}
+
+.start-user-icon, .start-pc-icon {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+}
+
+.start-pc-icon {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.action-btn {
+  margin: 20px;
+  padding: 0 5px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.round-btn {
+  width: 50px;
+  height: 50px;
+  margin: 6px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: var(--blue)
+}
+
+.round-btn:hover {
+  background-color: var(--blue-light)
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  color: var(--primary);
 }
