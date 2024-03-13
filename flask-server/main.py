@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+Rock-Paper-Scissors Game
+
+References:
+- https://www.youtube.com/watch?v=8ext9G7xspg
+"""
+
 import random
 
 def play():
