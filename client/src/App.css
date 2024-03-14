@@ -4,6 +4,12 @@
   --text-over-light-background: black;
   --blue: #1ea4c9;
   --blue-light: #89def6;
+  --rock-gradient: hsl(348, 71%, 52%);
+  --paper-gradient: hsl(230, 89%, 62%);
+  --scissors-gradient: hsl(41, 89%, 49%);
+  --player-won: #35e48c;
+  --player-lost: #e34a6b;
+  --draw: #eedc68;
 }
 
 .App {
@@ -18,6 +24,59 @@
   align-items: center;
   font-size: calc(10px + 2vmin);
   color: var(--text-over-dark-background);
+}
+
+h1 {
+  max-width: 500px;
+  width: 100%;
+  margin-top: 30px;
+  padding: 20px;
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: 1rem;
+}
+
+.action-btn {
+  margin: 0 20px;
+  padding: 0 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.round-btn {
+  width: 55px;
+  height: 55px;
+  margin: 6px;
+  border: 5px solid;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: white;
+}
+
+.round-btn.r {
+  border-color: var(--rock-gradient);
+}
+
+.round-btn.p {
+  border-color: var(--paper-gradient);
+}
+
+.round-btn.s {
+  border-color: var(--scissors-gradient);
+}
+
+.round-btn:hover {
+  transform: scale(1.3);
+}
+
+.round-btn.active {
+  transform: scale(1.3); /* Escalar el botón cuando esté activo */
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  color: var(--primary);
 }
 
 .container {
@@ -35,13 +94,44 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  color: var(--text-over-dark-background);
+  border-radius: 10%;
+  color: var(--text-over-light-background);
+}
+
+.player.Player-you, .player.Player-pc, .player.Player-draw,
+.player.Computer-you, .player.Computer-pc, .player.Computer-draw {
+  border: 5px solid;
+}
+
+.player.Player-you, .player.Computer-pc {
+  border-color: var(--player-won);
+}
+
+.player.Player-pc, .player.Computer-you {
+  border-color: var(--player-lost);
+}
+
+.player.Player-draw, .player.Computer-draw {
+  border-color: var(--draw);
 }
 
 .score {
  padding: 5px 3px;
  font-weight: bold;
- background-color: var(--blue);;
+ background-color: var(--blue-light);
+ border-radius: 5%;
+}
+
+.score.Player-you, .score.Computer-pc {
+  background-color: var(--player-won);
+}
+
+.score.Player-pc, .score.Computer-you {
+  background-color: var(--player-lost);
+}
+
+.score.Player-draw, .score.Computer-draw {
+  background-color: var(--draw);
 }
 
 .action {
@@ -66,31 +156,4 @@
 .scissors-pc-icon {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
-}
-
-.action-btn {
-  margin: 20px;
-  padding: 0 5px;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.round-btn {
-  width: 50px;
-  height: 50px;
-  margin: 6px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  background-color: var(--blue)
-}
-
-.round-btn:hover {
-  background-color: var(--blue-light)
-}
-
-.icon {
-  width: 25px;
-  height: 25px;
-  color: var(--primary);
 }

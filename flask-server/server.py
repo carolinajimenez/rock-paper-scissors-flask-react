@@ -31,7 +31,7 @@ def play_game():
         return {"result": "It's a tie", "computer_action": computer_action}
 
     if get_winner(user_action, computer_action):
-        return {"result": "Player wins!", "computer_action": computer_action}
+        return {"result": "Player won!", "computer_action": computer_action}
 
     return {"result": "Player lost!", "computer_action": computer_action}
 # * * *
