@@ -55,7 +55,9 @@ The computer will randomly select its action.
 
 View the game result to see whether you won, lost, or tied the game.
 
-<video src='images/Screen Recording.mov' width="400" />
+<p align="center"><img src="images/Screen Recording.gif" alt="Start of the game" width="400"></p>
+
+
 
 # Contributing
 
