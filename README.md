@@ -21,13 +21,13 @@ This project is a simple web application for playing the classic game of rock, p
 * Clone the repository:
 
     ```bash
-    git clone https://github.com/carolinajimenez/rock_paper_scissors.git
+    git clone https://github.com/carolinajimenez/rock-paper-scissors-flask-react
     ```
 
 * Navigate to the project directory:
 
     ```bash
-    cd rock_paper_scissors
+    cd rock-paper-scissors-flask-react
     ```
 
 * Install dependencies and run the application:
@@ -35,13 +35,13 @@ This project is a simple web application for playing the classic game of rock, p
     - Install backend dependencies
         ```bash
         cd flask-server
-        pip install -r requirements.txt
+        pip3 install -r requirements.txt
         python3 server.py
         ```
 
     - Install frontend dependencies
         ```bash
-        cd ../client
+        cd client
         npm install
         npm start
         ```
