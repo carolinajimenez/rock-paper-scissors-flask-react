@@ -18,6 +18,14 @@ import scissors from './images/scissors.gif';
 import './App.css';
 
 function ActionButton({ action, onActionSelected, activeButton, setActiveButton }) {
+  /**
+   * Button component for rock, paper, scissors actions.
+   * 
+   * @param {string} action - The action associated with the button ('r' for rock, 'p' for paper, 's' for scissors).
+   * @param {function} onActionSelected - Callback function invoked when the button is clicked, passing the selected action and server response.
+   * @param {string} activeButton - The currently active button.
+   * @param {function} setActiveButton - Function to set the currently active button.
+   */
   const ICONS = {
     "r": <FaHandFist className="icon" />,
     "p": <FaHand className="icon" />,
@@ -26,8 +34,8 @@ function ActionButton({ action, onActionSelected, activeButton, setActiveButton 
   const Icon = ICONS[action];
 
   const handleClick = () => {
-    setActiveButton(action); // Establecer este botón como activo
-    // Enviar acción al servidor Flask
+    setActiveButton(action); // Set this button as active
+    // Send action to the Flask server
     fetch('/play_game', {
       method: 'POST',
       headers: {
@@ -37,7 +45,7 @@ function ActionButton({ action, onActionSelected, activeButton, setActiveButton 
     })
     .then(response => response.json())
     .then(response => {
-      // Manejar la respuesta del servidor
+      // Handle server response
       onActionSelected(response, action);
     })
     .catch(error => {
@@ -55,8 +63,13 @@ function ActionButton({ action, onActionSelected, activeButton, setActiveButton 
   )
 }
 
-
 function ActionIcon({name, action}) {
+  /**
+   * Component for displaying action icons.
+   * 
+   * @param {string} name - The name associated with the icon ('Player' or 'Computer').
+   * @param {string} action - The action associated with the icon ('start', 'r' for rock, 'p' for paper, 's' for scissors).
+   */
   const ICONS = {
     "start": {"icon": start, "word": "start"},
     "r": {"icon": rock, "word": "rock"},
@@ -72,6 +85,13 @@ function ActionIcon({name, action}) {
 }
 
 function Player({name = "Player", action="start", winner}) {
+  /**
+   * Component representing a player in the game.
+   * 
+   * @param {string} name - The name of the player ('Player' or 'Computer').
+   * @param {string} action - The action chosen by the player ('start', 'r' for rock, 'p' for paper, 's' for scissors).
+   * @param {string} winner - The result of the game ('Player won!', 'Player lost!', 'It's a tie', or '').
+   */
   const result = (winner === undefined || winner === "" ) ? "" : winner === "Player won!" ? "you" : winner === "Player lost!" ? "pc" : "draw";
   return (
   <div className={`player ${name}-${result}`}>
@@ -84,6 +104,7 @@ function Player({name = "Player", action="start", winner}) {
 }
 
 export default function App() {
+  // State variables for player and computer actions, and game winner
   const [playerAction, setPlayerAction] = useState("start");
   const [computerAction, setComputerAction] = useState("start");
 
@@ -91,6 +112,7 @@ export default function App() {
 
   const [activeButton, setActiveButton] = useState(null);
 
+  // Function to handle action selection
   const onActionSelected = (response, selectedAction) => {
     setPlayerAction(selectedAction);
     setComputerAction(response['computer_action'])
